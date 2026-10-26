@@ -1,0 +1,1076 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Green Egypt</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500..700&display=swap">
+<style>
+/* Layout concept: one long RTL page. Light sections alternate with deep green bands.
+   Recurring motif: the plant tag, a card with a punched hole that carries a tree's ID and live status. */
+:root{
+  --bg:#F2F6F1; --surface:#FFFFFF; --surface-2:#E6EEE5; --ink:#0E2219; --ink-2:#465B4F;
+  --line:#D2DDD1; --line-strong:#B7C7B8;
+  --brand:#1B7A4B; --brand-hover:#14623A; --brand-ink:#12583A; --on-brand:#FFFFFF; --brand-soft:#D9EBDD;
+  --sun:#E9A82B; --sun-soft:#FBEBC8; --sun-ink:#6A4600;
+  --ok:#1B7A4B; --ok-bg:#D9EBDD; --ok-fg:#0F4F30;
+  --water:#2B7BB9; --water-bg:#D7E8F6; --water-fg:#174F7A;
+  --care:#C98100; --care-bg:#FBEBC8; --care-fg:#6A4600;
+  --dead:#B04A36; --dead-bg:#F6DDD6; --dead-fg:#7E2A1A;
+  --glyph:#FFFFFF; --trunk:#7A5A3A;
+  --band:#0B3B28; --on-band:#EAF5EC; --on-band-2:#A9C7B3; --band-line:rgba(234,245,236,.18); --band-fill:rgba(234,245,236,.07);
+  --road:#3B4A41; --road-ink:#C9D6CC; --road-dash:#8EA195;
+  --shadow:0 1px 2px rgba(14,34,25,.06),0 18px 40px -18px rgba(14,34,25,.28);
+  --font-display:'Reem Kufi','IBM Plex Sans Arabic',Tahoma,sans-serif;
+  --font-body:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  direction:rtl; scroll-behavior:smooth;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1712; --surface:#112219; --surface-2:#17301F; --ink:#E7F2EA; --ink-2:#9DB5A5;
+    --line:#24402F; --line-strong:#356048;
+    --brand:#4CC58A; --brand-hover:#6AD6A0; --brand-ink:#7ADBA9; --on-brand:#06210F; --brand-soft:#173B28;
+    --sun:#F0B84A; --sun-soft:#3A2A0A; --sun-ink:#F6C877;
+    --ok:#4CC58A; --ok-bg:#173B28; --ok-fg:#8FE0B6;
+    --water:#5AAEE6; --water-bg:#12304A; --water-fg:#9CCDF2;
+    --care:#F0A530; --care-bg:#3A2A0A; --care-fg:#F6C877;
+    --dead:#E07A62; --dead-bg:#3E1D16; --dead-fg:#F2A593;
+    --glyph:#07140D; --trunk:#A98763;
+    --band:#0E2A1D; --on-band:#E7F2EA; --on-band-2:#93B3A0; --band-line:rgba(231,242,234,.16); --band-fill:rgba(231,242,234,.05);
+    --road:#0C1812; --road-ink:#7E978A; --road-dash:#4A6354;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1712; --surface:#112219; --surface-2:#17301F; --ink:#E7F2EA; --ink-2:#9DB5A5;
+  --line:#24402F; --line-strong:#356048;
+  --brand:#4CC58A; --brand-hover:#6AD6A0; --brand-ink:#7ADBA9; --on-brand:#06210F; --brand-soft:#173B28;
+  --sun:#F0B84A; --sun-soft:#3A2A0A; --sun-ink:#F6C877;
+  --ok:#4CC58A; --ok-bg:#173B28; --ok-fg:#8FE0B6;
+  --water:#5AAEE6; --water-bg:#12304A; --water-fg:#9CCDF2;
+  --care:#F0A530; --care-bg:#3A2A0A; --care-fg:#F6C877;
+  --dead:#E07A62; --dead-bg:#3E1D16; --dead-fg:#F2A593;
+  --glyph:#07140D; --trunk:#A98763;
+  --band:#0E2A1D; --on-band:#E7F2EA; --on-band-2:#93B3A0; --band-line:rgba(231,242,234,.16); --band-fill:rgba(231,242,234,.05);
+  --road:#0C1812; --road-ink:#7E978A; --road-dash:#4A6354;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.85;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.35;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.mono{font-family:var(--font-mono);direction:ltr;unicode-bidi:isolate}
+.muted{color:var(--ink-2)}
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.section{padding-block:88px;scroll-margin-top:70px}
+.band{background:var(--band);color:var(--on-band)}
+.band .muted{color:var(--on-band-2)}
+.sec-head{display:grid;gap:14px;max-width:760px;margin-bottom:44px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem;color:var(--brand-ink)}
+.eyebrow::before{content:"";width:22px;height:10px;border-radius:5px 5px 5px 2px;background:var(--brand)}
+.band .eyebrow{color:var(--on-band)}
+.band .eyebrow::before{background:var(--sun)}
+h2{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+.lead{font-size:1.12rem;color:var(--ink-2);max-width:62ch}
+.band .lead{color:var(--on-band-2)}
+
+/* buttons, pills */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:12px;border:1.5px solid var(--line-strong);background:var(--surface);color:var(--ink);font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;transition:background .15s,border-color .15s,transform .15s}
+.btn:hover{border-color:var(--brand)}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.btn-primary:hover{background:var(--brand-hover);border-color:var(--brand-hover)}
+.btn-ghost{background:transparent}
+.btn-sm{min-height:40px;padding:0 16px;font-size:.95rem}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:2px 12px;border-radius:99px;font-size:.88rem;font-weight:600;line-height:1.7;white-space:nowrap}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+.pill.ok{background:var(--ok-bg);color:var(--ok-fg)}
+.pill.thirsty{background:var(--water-bg);color:var(--water-fg)}
+.pill.care{background:var(--care-bg);color:var(--care-fg)}
+.pill.dead{background:var(--dead-bg);color:var(--dead-fg)}
+
+/* header */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.logo{width:38px;height:38px;display:block}
+.logo .l-bg{fill:var(--brand)} .logo .l-fg{fill:var(--on-brand)} .logo .l-dot{fill:var(--sun)}
+.brand-name{font-family:var(--font-display);font-weight:700;font-size:1.3rem;direction:ltr;unicode-bidi:isolate}
+.nav{display:flex;gap:2px;margin-inline-start:auto}
+.nav a{padding:8px 11px;border-radius:8px;text-decoration:none;font-size:.95rem;font-weight:500;color:var(--ink-2)}
+.nav a:hover{background:var(--surface-2);color:var(--ink)}
+.menu-btn{display:none;margin-inline-start:auto}
+.bar .btn-primary{flex:none}
+
+/* hero */
+.hero{position:relative;padding-block:64px 72px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--line-strong) 1px,transparent 1.2px);background-size:24px 24px;opacity:.55;-webkit-mask-image:linear-gradient(to bottom,#000 0,transparent 85%);mask-image:linear-gradient(to bottom,#000 0,transparent 85%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,4.8vw,3.6rem);line-height:1.35;margin-block:18px 22px}
+.hero h1 em{font-style:normal;color:var(--brand-ink);background:linear-gradient(transparent 62%,var(--sun-soft) 62%)}
+.hero .lead{font-size:1.18rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.scope{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line)}
+.scope b{font-weight:600;color:var(--ink-2);margin-inline-end:6px}
+.chip{padding:3px 14px;border-radius:99px;background:var(--surface);border:1px solid var(--line-strong);font-size:.95rem;font-weight:500}
+
+/* the plant tag */
+.tag-card{position:relative;width:100%;max-width:390px;margin-inline:auto;background:var(--surface);border:1.5px solid var(--line-strong);border-radius:26px 26px 18px 18px;padding:46px 24px 20px;box-shadow:var(--shadow);transform:rotate(-1.6deg)}
+.hole{position:absolute;top:14px;inset-inline:0;margin-inline:auto;width:18px;height:18px;border-radius:50%;background:var(--bg);border:1.5px solid var(--line-strong);box-shadow:inset 0 2px 3px rgba(0,0,0,.12)}
+.tag-card::before{content:"";position:absolute;top:-34px;inset-inline:0;margin-inline:auto;width:2px;height:50px;background:var(--line-strong);transform:rotate(3deg);transform-origin:bottom}
+.tag-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tag-id{font-weight:500;font-size:.98rem;letter-spacing:.04em}
+.tag-body{display:grid;grid-template-columns:116px minmax(0,1fr);gap:14px;align-items:center;margin-block:10px 4px}
+.tree-ill{width:116px;height:auto;display:block}
+.tree-ill .ground{fill:var(--surface-2)} .tree-ill .trunk{fill:var(--trunk)} .tree-ill .c1{fill:var(--ok)} .tree-ill .c2{fill:var(--ok);opacity:.82} .tree-ill .c3{fill:#fff;opacity:.2}
+.tree-ill .drip{stroke:var(--water);fill:none;stroke-width:2;stroke-dasharray:4 4;stroke-linecap:round} .tree-ill .sensor{fill:var(--water)} .tree-ill .wave{stroke:var(--water);fill:none;stroke-width:1.8;stroke-linecap:round}
+.tag-body h3{font-size:1.55rem}
+.tag-body p{font-size:.95rem;line-height:1.7}
+.meter-row{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;font-size:.95rem}
+.meter{position:relative;height:10px;border-radius:99px;background:var(--surface-2);margin-top:6px}
+.meter>span{position:absolute;inset-block:0;inset-inline-start:0;width:var(--v);border-radius:99px;background:var(--water);transition:width .4s}
+.meter>i{position:absolute;inset-block:-4px;inset-inline-start:var(--t);width:2px;background:var(--ink);opacity:.55}
+.tag-list{margin:14px 0 0;display:grid;gap:0}
+.tag-list div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px dashed var(--line-strong);font-size:.95rem}
+.tag-list dt{color:var(--ink-2)} .tag-list dd{margin:0;font-weight:600;text-align:end}
+.tag-note{margin-top:12px;font-size:.82rem;color:var(--ink-2);text-align:center}
+
+/* problem */
+.prob-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:start}
+.prob-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.prob{padding:22px;border:1px solid var(--band-line);background:var(--band-fill);border-radius:14px;display:grid;gap:10px;align-content:start}
+.prob svg{width:34px;height:34px;stroke:var(--sun);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.prob h3{font-size:1.15rem;line-height:1.5}
+.prob p{font-size:.97rem;line-height:1.75;color:var(--on-band-2)}
+.stat-panel{border:1px solid var(--band-line);border-radius:14px;padding:24px;display:grid;gap:18px;background:var(--band-fill)}
+.stat-panel h3{font-size:1.15rem;line-height:1.5}
+.bars{display:grid;gap:16px}
+.bar-row .lbl{display:flex;justify-content:space-between;gap:12px;font-size:.93rem;margin-bottom:6px;line-height:1.6}
+.bar-row .lbl b{font-family:var(--font-mono);font-weight:500;direction:ltr}
+.bar-track{height:14px;border-radius:7px;background:var(--band-line)}
+.bar-fill{height:100%;border-radius:7px;width:var(--w)}
+.bar-row.who .bar-fill{background:var(--brand)} .bar-row.p30 .bar-fill{background:var(--sun)} .bar-row.p20 .bar-fill{background:var(--on-band-2)}
+.src{font-size:.82rem;color:var(--on-band-2);line-height:1.6}
+.note-box{padding:16px 18px;border-radius:12px;background:var(--sun-soft);color:var(--sun-ink);font-size:.98rem;line-height:1.75;font-weight:500}
+
+/* journey */
+.journey{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;margin-top:8px}
+.step{position:relative;padding-top:66px}
+.step .n{position:absolute;top:0;inset-inline-start:0;width:46px;height:46px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:1.2rem}
+.step::before{content:"";position:absolute;top:22px;inset-inline-start:54px;inset-inline-end:-24px;height:2px;background:repeating-linear-gradient(to left,var(--line-strong) 0 8px,transparent 8px 14px)}
+.step:last-child::before{display:none}
+.step h3{font-size:1.2rem;margin-bottom:8px}
+.step p{font-size:.97rem;line-height:1.75;color:var(--ink-2)}
+.out{display:inline-block;margin-top:12px;padding:2px 12px;border-radius:6px;background:var(--brand-soft);color:var(--ok-fg);font-size:.88rem;font-weight:600}
+
+/* tech */
+.tech-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 32px}
+.tech{padding-top:20px;border-top:2px solid var(--brand);display:grid;gap:10px;align-content:start}
+.tech svg{width:36px;height:36px;stroke:var(--brand);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tech h3{font-size:1.2rem}
+.tech p{font-size:.98rem;line-height:1.8;color:var(--ink-2)}
+.tech small{display:block;font-size:.85rem;line-height:1.65;color:var(--ink-2);padding-top:6px;border-top:1px dashed var(--line-strong)}
+.flow-wrap{margin-top:56px}
+.flow-wrap h3{font-size:1.2rem;margin-bottom:18px}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:30px}
+.node{position:relative;padding:16px 16px 18px;background:var(--surface);border:1.5px solid var(--line-strong);border-radius:12px;display:grid;gap:4px;align-content:start}
+.node b{font-size:1rem} .node span{font-size:.9rem;color:var(--ink-2);line-height:1.6}
+.node:not(:last-child)::after{content:"\2190";position:absolute;inset-inline-end:-26px;top:50%;transform:translateY(-50%);width:22px;text-align:center;color:var(--brand-ink);font-weight:700;font-size:1.2rem}
+
+/* dashboard */
+.dash{background:var(--surface);border:1.5px solid var(--line-strong);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.dash-top{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.fchip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:99px;border:1.5px solid var(--line-strong);background:var(--surface);cursor:pointer;font-weight:600;font-size:.93rem}
+.fchip .sw{width:12px;height:12px;border-radius:50%;background:var(--sc,var(--ink-2))}
+.fchip b{font-family:var(--font-mono);font-weight:500;font-size:.9rem}
+.fchip[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.fchip.s-ok{--sc:var(--ok)} .fchip.s-thirsty{--sc:var(--water)} .fchip.s-care{--sc:var(--care)} .fchip.s-dead{--sc:var(--dead)}
+.sim{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.switch{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem;cursor:pointer;min-height:40px}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .tr{position:relative;width:44px;height:26px;border-radius:99px;background:var(--line-strong);transition:background .2s;flex:none}
+.switch .tr::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:inset-inline-start .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.switch input:checked + .tr{background:var(--brand)}
+.switch input:checked + .tr::after{inset-inline-start:21px}
+.switch input:focus-visible + .tr{outline:3px solid var(--sun);outline-offset:3px}
+.day{font-family:var(--font-mono);font-size:.9rem;color:var(--ink-2);direction:ltr;unicode-bidi:isolate}
+.dash-main{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);grid-template-areas:"map side" "feed side"}
+.map-col{grid-area:map;padding:20px 20px 8px;min-width:0;border-inline-end:1px solid var(--line)}
+.swipe{display:none}
+.street-scroll{overflow-x:auto;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.street{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto 60px auto;gap:6px 2px;padding:14px 12px;min-width:660px}
+.road{grid-row:2;grid-column:1/-1;background:var(--road);border-radius:8px;position:relative;display:grid;place-items:center;align-self:center;height:60px}
+.road::before{content:"";position:absolute;inset-inline:14px;top:50%;height:2px;background:repeating-linear-gradient(to left,var(--road-dash) 0 22px,transparent 22px 40px)}
+.road span{position:relative;background:var(--road);padding:0 12px;font-size:.82rem;color:var(--road-ink)}
+.drip{grid-column:1/-1;height:2px;background:var(--water);opacity:.45;align-self:center;margin-inline:6px}
+.drip.a{grid-row:1} .drip.b{grid-row:3}
+.tree{grid-column:var(--c);position:relative;z-index:1;display:grid;justify-items:center;gap:3px;padding:2px 0;background:none;border:0;cursor:pointer;transition:opacity .2s}
+.tree.a{grid-row:1} .tree.b{grid-row:3}
+.tree .c{position:relative;width:42px;height:42px;border-radius:50%;background:var(--sc);display:grid;place-items:center;border:3px solid var(--bg);box-shadow:0 0 0 2px var(--sc);transition:background .3s,box-shadow .3s,transform .15s}
+.tree:hover .c{transform:scale(1.08)}
+.tree .c svg{width:22px;height:22px;stroke:var(--glyph);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tree .tid{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-2);line-height:1.2}
+.tree.s-ok{--sc:var(--ok)} .tree.s-thirsty{--sc:var(--water)} .tree.s-care{--sc:var(--care)} .tree.s-dead{--sc:var(--dead)}
+.tree.sel .c{outline:3px solid var(--ink);outline-offset:3px}
+.tree.dim{opacity:.18}
+.tree.s-thirsty .c::after,.tree.s-care .c::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid var(--sc);opacity:0;animation:ring 2s ease-out infinite}
+@keyframes ring{0%{transform:scale(.7);opacity:.7}100%{transform:scale(1.15);opacity:0}}
+.hint{margin-top:10px;font-size:.88rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:50%;background:var(--sc)}
+.side{grid-area:side;padding:20px;display:grid;gap:20px;align-content:start;min-width:0}
+.passport{position:relative;border:1.5px solid var(--line-strong);border-radius:22px 22px 14px 14px;padding:40px 18px 16px;background:var(--bg);display:grid;gap:4px}
+.passport .hole{background:var(--surface)}
+.passport h3{font-size:1.4rem;margin-top:6px}
+.passport h3 small{font-family:var(--font-body);font-size:.85rem;font-weight:600;color:var(--brand-ink);margin-inline-start:6px}
+.passport .meta{font-size:.92rem;color:var(--ink-2);line-height:1.7}
+.p-row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-top:1px dashed var(--line-strong);font-size:.93rem}
+.p-row span{color:var(--ink-2)} .p-row b{font-weight:600;text-align:end}
+.p-meter-hint{font-size:.8rem;color:var(--ink-2);margin-top:4px}
+.next{margin-top:10px;padding:12px 14px;border-radius:10px;font-size:.93rem;line-height:1.7;font-weight:500;background:var(--ok-bg);color:var(--ok-fg)}
+.next.thirsty{background:var(--water-bg);color:var(--water-fg)} .next.care{background:var(--care-bg);color:var(--care-fg)} .next.dead{background:var(--dead-bg);color:var(--dead-fg)}
+.p-act{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}
+.qr{width:58px;height:58px;flex:none;fill:var(--ink)}
+.feed{grid-area:feed;padding:8px 20px 20px;min-width:0;border-inline-end:1px solid var(--line)}
+.feed h4{font-size:1.02rem;margin-bottom:6px}
+.feed ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.feed li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:.9rem;line-height:1.6}
+.feed li i{width:10px;height:10px;border-radius:50%;margin-top:8px;background:var(--sc)}
+.feed li.s-ok{--sc:var(--ok)} .feed li.s-thirsty{--sc:var(--water)} .feed li.s-care{--sc:var(--care)} .feed li.s-dead{--sc:var(--dead)}
+.feed li time{display:block;font-family:var(--font-mono);font-size:.72rem;color:var(--ink-2);direction:ltr;text-align:end}
+.dash-foot{display:flex;flex-wrap:wrap;gap:8px 28px;padding:14px 20px;border-top:1px solid var(--line);background:var(--surface-2);font-size:.93rem}
+.dash-foot b{font-family:var(--font-mono);font-weight:500}
+.disclaimer{margin-top:14px;font-size:.88rem;color:var(--ink-2)}
+
+/* sectors */
+.tabs{display:flex;gap:4px;border-bottom:1.5px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.tab{padding:12px 20px;border:0;background:none;font-weight:600;font-size:1.02rem;color:var(--ink-2);border-bottom:3px solid transparent;margin-bottom:-1.5px;cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--brand-ink);border-bottom-color:var(--brand)}
+.sector{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 48px;padding-top:32px}
+.sector div{display:grid;gap:6px;align-content:start}
+.sector dt{font-family:var(--font-display);font-weight:700;font-size:1.08rem;color:var(--brand-ink)}
+.sector dd{margin:0;color:var(--ink-2);line-height:1.8}
+.sector .risk dt{color:var(--care-fg)}
+
+/* revenue */
+.rev-head,.rev-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1.6fr) 130px;gap:20px;align-items:start}
+.rev-head{padding:0 0 10px;font-size:.88rem;font-weight:600;color:var(--on-band-2)}
+.rev-row{padding:18px 0;border-top:1px solid var(--band-line)}
+.rev-row .t{font-family:var(--font-display);font-weight:700;font-size:1.12rem;line-height:1.5}
+.rev-row .cell{font-size:.97rem;line-height:1.75;color:var(--on-band-2)}
+.rev-row .cell::before{display:none}
+.stage{justify-self:start;padding:2px 12px;border-radius:99px;font-size:.85rem;font-weight:600;white-space:nowrap}
+.stage.now{background:var(--brand-soft);color:var(--ok-fg)} .stage.next{background:var(--water-bg);color:var(--water-fg)} .stage.scale{background:var(--surface-2);color:var(--ink)} .stage.future{background:var(--sun-soft);color:var(--sun-ink)}
+.loop{margin-top:44px;padding-top:28px;border-top:1px solid var(--band-line)}
+.loop h3{font-size:1.15rem;margin-bottom:16px}
+.loop .flow .node{background:var(--band-fill);border-color:var(--band-line);color:var(--on-band)}
+.loop .flow .node::after{color:var(--sun)}
+.loop .flow .node span{color:var(--on-band-2)}
+.fine{margin-top:22px;font-size:.9rem;color:var(--on-band-2)}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:start}
+.inputs{display:grid;gap:22px}
+.field label{display:flex;justify-content:space-between;gap:12px;font-weight:600;margin-bottom:8px}
+.field label output{font-family:var(--font-mono);font-weight:500;color:var(--brand-ink)}
+.field small{display:block;margin-top:4px;font-size:.85rem;color:var(--ink-2);line-height:1.6}
+input[type=range]{width:100%;accent-color:var(--brand);height:28px;cursor:pointer}
+.results{display:grid;gap:22px;background:var(--surface);border:1.5px solid var(--line-strong);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.res h3{font-size:1.05rem;margin-bottom:12px;line-height:1.5}
+.res .bar-row .lbl{font-size:.95rem}
+.res .bar-track{background:var(--surface-2);height:16px}
+.res .bar-row.with .bar-fill{background:var(--brand)} .res .bar-row.without .bar-fill{background:var(--line-strong)}
+.res .delta{margin-top:10px;font-size:.95rem;font-weight:600;color:var(--brand-ink)}
+.assume{font-size:.86rem;line-height:1.75;color:var(--ink-2);padding-top:14px;border-top:1px dashed var(--line-strong)}
+
+/* plan */
+.plan{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+.plan h3{font-size:1.3rem;margin-bottom:18px}
+.kpis{list-style:none;margin:0;padding:0}
+.kpis li{padding:14px 0;border-top:1px solid var(--line);display:grid;gap:2px}
+.kpis b{font-weight:600} .kpis span{font-size:.95rem;color:var(--ink-2);line-height:1.7}
+.phases{display:grid;gap:0}
+.phase{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;padding-bottom:26px;position:relative}
+.phase::before{content:"";position:absolute;inset-inline-start:11px;top:28px;bottom:2px;width:2px;background:var(--line-strong)}
+.phase:last-child::before{display:none}
+.phase i{width:24px;height:24px;border-radius:50%;border:3px solid var(--brand);background:var(--bg);margin-top:5px;position:relative;z-index:1}
+.phase:first-child i{background:var(--brand)}
+.phase b{display:block;font-family:var(--font-display);font-size:1.12rem;line-height:1.5}
+.phase p{font-size:.97rem;line-height:1.75;color:var(--ink-2)}
+
+/* join */
+.join{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+.who{display:flex;flex-wrap:wrap;gap:10px;margin-block:24px 0}
+.who input{position:absolute;opacity:0;width:1px;height:1px}
+.who label{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:99px;border:1.5px solid var(--band-line);background:var(--band-fill);cursor:pointer;font-weight:600;transition:background .15s,border-color .15s}
+.who label:hover{border-color:var(--on-band-2)}
+.who input:checked + label{background:var(--on-band);color:var(--band);border-color:var(--on-band)}
+.who input:focus-visible + label{outline:3px solid var(--sun);outline-offset:3px}
+.join-card{background:var(--surface);color:var(--ink);border-radius:18px;padding:26px;display:grid;gap:16px;box-shadow:var(--shadow)}
+.join-card h3{font-size:1.15rem}
+.need{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.need li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;font-size:.97rem;line-height:1.7}
+.need li::before{content:"";width:10px;height:10px;margin-top:9px;border-radius:50%;background:var(--brand)}
+.join-card label.tl{font-weight:600;font-size:.95rem}
+textarea{width:100%;min-height:150px;resize:vertical;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line-strong);background:var(--bg);line-height:1.8;font-size:.97rem}
+.copy-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.copy-status{font-size:.9rem;color:var(--brand-ink);font-weight:600}
+.contact{font-size:.93rem;color:var(--ink-2);line-height:1.8;padding-top:14px;border-top:1px dashed var(--line-strong)}
+.contact .mono{color:var(--ink);user-select:all}
+
+footer{background:var(--band);color:var(--on-band);padding-block:48px 56px}
+.foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px}
+.foot .brand-name{color:var(--on-band)}
+.foot p{font-size:.93rem;line-height:1.8;color:var(--on-band-2);margin-top:12px;max-width:44ch}
+.foot h4{font-size:1rem;margin-bottom:10px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.88rem;line-height:1.6}
+.foot a{color:var(--on-band);text-decoration-color:var(--on-band-2);text-underline-offset:3px}
+.foot .logo .l-bg{fill:var(--sun)} .foot .logo .l-fg{fill:var(--band)} .foot .logo .l-dot{fill:var(--band)}
+
+@media (max-width:1040px){
+  .nav a{padding:8px 8px;font-size:.9rem}
+}
+@media (max-width:940px){
+  .section{padding-block:64px}
+  .menu-btn{display:inline-flex}
+  .nav{position:absolute;top:100%;inset-inline:0;display:none;flex-direction:column;gap:0;margin:0;padding:8px max(16px,env(safe-area-inset-right,0px)) 14px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .nav.open{display:flex}
+  .nav a{padding:12px 8px;font-size:1.02rem}
+  .bar .btn-primary{display:none}
+  .hero-grid,.prob-grid,.calc,.join,.plan,.foot{grid-template-columns:minmax(0,1fr)}
+  .hero{padding-block:44px 56px}
+  .hero-grid{gap:60px}
+  .journey{grid-template-columns:minmax(0,1fr);gap:0}
+  .step{padding:0 0 30px;padding-inline-start:70px;min-height:66px}
+  .step::before{top:50px;bottom:4px;inset-inline-start:22px;inset-inline-end:auto;width:2px;height:auto;background:repeating-linear-gradient(to bottom,var(--line-strong) 0 8px,transparent 8px 14px)}
+  .tech-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:minmax(0,1fr);gap:30px}
+  .node:not(:last-child)::after{content:"\2193";inset-inline-end:auto;left:50%;top:auto;bottom:-28px;transform:translateX(-50%)}
+  .dash-main{grid-template-columns:minmax(0,1fr);grid-template-areas:"map" "side" "feed"}
+  .map-col{border-inline-end:0;padding-bottom:16px}
+  .feed{border-inline-end:0;border-top:1px solid var(--line);padding-top:16px}
+  .swipe{display:block}
+  .sector{grid-template-columns:minmax(0,1fr)}
+  .rev-head{display:none}
+  .rev-row{grid-template-columns:minmax(0,1fr);gap:8px}
+  .rev-row .cell::before{display:block;content:attr(data-l);font-size:.8rem;font-weight:600;color:var(--on-band);opacity:.7}
+  .rev-row .stage{order:-1}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .section{padding-block:52px}
+  .prob-list{grid-template-columns:minmax(0,1fr)}
+  .tech-grid{grid-template-columns:minmax(0,1fr)}
+  .tag-card{transform:none}
+  .dash-top{padding:14px 16px}
+  .map-col,.side{padding:16px}
+  .feed{padding-inline:16px}
+  .join-card,.results{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  :root{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+<div class="site" dir="rtl" lang="ar" id="top">
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Green Egypt، الرئيسية">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true">
+        <rect class="l-bg" width="40" height="40" rx="11"/>
+        <circle class="l-fg" cx="20" cy="16" r="9"/>
+        <rect class="l-fg" x="18.4" y="23" width="3.2" height="10" rx="1.6"/>
+        <circle class="l-dot" cx="24.2" cy="13" r="2.4"/>
+      </svg>
+      <span class="brand-name">Green Egypt</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="أقسام الموقع">
+      <a href="#problem">المشكلة</a>
+      <a href="#journey">رحلة الشجرة</a>
+      <a href="#tech">التكنولوجيا</a>
+      <a href="#tracker">لوحة المتابعة</a>
+      <a href="#places">الأماكن</a>
+      <a href="#revenue">الاستدامة المالية</a>
+      <a href="#impact">حاسبة الأثر</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#join">كن شريكًا</a>
+    <button class="btn btn-ghost btn-sm menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">القائمة</button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">مشروع لزيادة المساحات الخضراء في مصر</span>
+        <h1>مش بس بنزرع شجر.<br><em>بنتابع كل شجرة</em><br>لحد ما تكبر.</h1>
+        <p class="lead">Green Egypt منصة بتزرع الأشجار وترعاها وتتابعها بالتكنولوجيا. كل شجرة ليها كود وهوية رقمية، وليها ري ذكي بيوفر المياه، وفريق بيتدخل أول ما تحتاج رعاية أو استبدال. الهدف إن الشجر يعيش فعلًا، وإن المشروع يصرف على نفسه.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#tracker">جرّب لوحة المتابعة</a>
+          <a class="btn" href="#join">كن شريكًا</a>
+        </div>
+        <div class="scope">
+          <b>بنزرع في</b>
+          <span class="chip">الشوارع</span><span class="chip">المدارس</span><span class="chip">الجامعات</span><span class="chip">المناطق السكنية</span><span class="chip">الشركات</span>
+        </div>
+      </div>
+
+      <div class="tag-card" role="img" aria-label="مثال على بطاقة شجرة: نيم، رطوبة التربة 58%، الحالة سليمة">
+        <span class="hole" aria-hidden="true"></span>
+        <div class="tag-top">
+          <span class="mono tag-id">GE-0124</span>
+          <span class="pill ok"><i class="dot"></i>سليمة</span>
+        </div>
+        <div class="tag-body">
+          <svg class="tree-ill" viewBox="0 0 120 120" aria-hidden="true">
+            <ellipse class="ground" cx="60" cy="108" rx="48" ry="7"/>
+            <path class="drip" d="M12 106H108"/>
+            <rect class="trunk" x="56" y="62" width="8" height="46" rx="3"/>
+            <circle class="c1" cx="60" cy="44" r="27"/>
+            <circle class="c2" cx="38" cy="58" r="16"/>
+            <circle class="c2" cx="82" cy="58" r="16"/>
+            <circle class="c3" cx="50" cy="35" r="10"/>
+            <line x1="100" y1="106" x2="100" y2="92" stroke="var(--ink-2)" stroke-width="2.5" stroke-linecap="round"/>
+            <circle class="sensor" cx="100" cy="88" r="4"/>
+            <path class="wave" d="M92 80a11 11 0 0 1 16 0"/>
+            <path class="wave" d="M88 75a17 17 0 0 1 24 0"/>
+          </svg>
+          <div>
+            <h3>نيم</h3>
+            <p class="muted">مزروعة من 14 شهر<br>شارع تجريبي، الجانب الشرقي</p>
+          </div>
+        </div>
+        <div class="meter-row"><span>رطوبة التربة</span><b class="mono">58%</b></div>
+        <div class="meter" aria-hidden="true"><span style="--v:58%"></span><i style="--t:30%"></i></div>
+        <dl class="tag-list">
+          <div><dt>آخر ري</dt><dd>من يومين</dd></div>
+          <div><dt>آخر فحص ميداني</dt><dd>من 9 أيام</dd></div>
+          <div><dt>الإجراء الجاي</dt><dd>فحص بعد 6 أيام</dd></div>
+        </dl>
+        <p class="tag-note">مثال توضيحي لبطاقة شجرة على المنصة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section band" id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">المشكلة</span>
+      <h2>بنزرع شجر كتير، ومحدش بيعرف إيه اللي بيعيش منه</h2>
+      <p class="lead">التشجير بيبدأ بصورة حلوة يوم الزراعة، وبعدها الشجرة بتتساب لوحدها. الشجرة اللي محدش بيتابعها ممكن تجف وتموت من غير ما حد ياخد باله.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-list">
+        <article class="prob">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M5 30h26M9 30V14l9-8 9 8v16M14 30v-8h8v8"/></svg>
+          <h3>مساحات خضراء قليلة في المدن</h3>
+          <p>في مناطق كتير الأسفلت والخرسانة أكتر بكتير من الشجر، والناس بتدفع تمن ده حر وهوا أسوأ.</p>
+        </article>
+        <article class="prob">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="12"/><path d="M18 11v7l5 3"/></svg>
+          <h3>زراعة من غير متابعة</h3>
+          <p>مفيش جدول صيانة ولا حد مسؤول عن الشجرة بعد الزراعة، فالمجهود الأول بيضيع.</p>
+        </article>
+        <article class="prob">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 4c6 7 10 11.5 10 17a10 10 0 0 1-20 0c0-5.500 4-10 10-17zM14 22a4 4 0 0 0 4 4"/></svg>
+          <h3>مياه بتتهدر في الري</h3>
+          <p>الري بالغمر أو بجدول ثابت بيدّي الشجرة ميّة أكتر أو أقل من احتياجها الفعلي.</p>
+        </article>
+        <article class="prob">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="13"/><path d="M14 14.500a4 4 0 1 1 5.500 3.700c-1 .5-1.500 1.200-1.500 2.300M18 25.500v.5"/></svg>
+          <h3>مفيش طريقة نعرف بيها حالة الشجرة</h3>
+          <p>لسه عايشة ولا ماتت؟ محتاجة ري ولا علاج؟ من غير بيانات الإجابة بتبقى تخمين.</p>
+        </article>
+      </div>
+
+      <div class="stat-panel">
+        <h3>نصيب الفرد من المساحات الخضراء (م² لكل فرد)</h3>
+        <div class="bars">
+          <div class="bar-row who"><div class="lbl"><span>الحد الأدنى الموصى به من منظمة الصحة العالمية</span><b>9</b></div><div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div></div>
+          <div class="bar-row p30"><div class="lbl"><span>المتوقع في مصر بحلول 2030</span><b>3</b></div><div class="bar-track"><div class="bar-fill" style="--w:33.3%"></div></div></div>
+          <div class="bar-row p20"><div class="lbl"><span>المستهدف في خطة مصر لعام 2020</span><b>1</b></div><div class="bar-track"><div class="bar-fill" style="--w:11.1%"></div></div></div>
+        </div>
+        <p class="src">في 2020 كان الفعلي أقل من المستهدف بنحو 0.3 م². المصدر: <a href="https://www.natureasia.com/ar/nmiddleeast/article/10.1038/nmiddleeast.2024.192" target="_blank" rel="noopener">Nature Middle East، 2024</a>.</p>
+        <div class="note-box">مصر عندها المبادرة الرئاسية «زراعة 100 مليون شجرة». الزراعة لوحدها مش كفاية، المطلوب نظام بيتابع الشجر ده بعد يوم الزراعة، وده شغلنا.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section" id="journey">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">الحل</span>
+      <h2>كل شجرة ليها ملف، وليها حد مسؤول عنها</h2>
+      <p class="lead">دي رحلة الشجرة معانا من أول اختيار المكان لحد ما تكبر. الترتيب مهم، وكل خطوة بتسيب أثر نقدر نراجعه.</p>
+    </div>
+    <ol class="journey" style="list-style:none;margin:0;padding:0">
+      <li class="step"><span class="n" aria-hidden="true">1</span><h3>نختار المكان والنوع</h3><p>بنتفق مع الجهة المسؤولة عن المكان، ونختار أنواع شجر تناسب المناخ والمساحة ومصدر المياه.</p><span class="out">اتفاق مع الجهة</span></li>
+      <li class="step"><span class="n" aria-hidden="true">2</span><h3>نزرع ونديها هوية</h3><p>كل شجرة بتاخد كود QR وموقع GPS وصورة يوم الزراعة، وتتسجل على المنصة.</p><span class="out">كود وموقع وصورة</span></li>
+      <li class="step"><span class="n" aria-hidden="true">3</span><h3>نروي بذكاء</h3><p>ري بالتنقيط وحساس رطوبة في التربة. الميّة بتنزل لما الشجرة تحتاجها بس.</p><span class="out">قراءة رطوبة مستمرة</span></li>
+      <li class="step"><span class="n" aria-hidden="true">4</span><h3>نتابع ونتدخل</h3><p>تنبيه فوري لما حاجة تتغير، وزيارات ميدانية بتتسجل بالصور. وأي حد يمسح الكود يشوف حالة الشجرة.</p><span class="out">أمر شغل وسجل صور</span></li>
+      <li class="step"><span class="n" aria-hidden="true">5</span><h3>نضمن ونبلّغ</h3><p>الشجرة اللي بتموت بتتبدل، والجهة الشريكة بتستلم تقرير دوري بالشجر الحي والأثر.</p><span class="out">استبدال وتقرير</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- TECH -->
+<section class="section" id="tech" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">التكنولوجيا</span>
+      <h2>تكنولوجيا بتخلّي المتابعة شغل يومي، مش وعد</h2>
+      <p class="lead">من غير بيانات مش هنعرف الشجرة محتاجة إيه. دي الأدوات اللي بنبني عليها المتابعة.</p>
+    </div>
+    <div class="tech-grid">
+      <article class="tech">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="5" y="5" width="11" height="11" rx="2"/><rect x="20" y="5" width="11" height="11" rx="2"/><rect x="5" y="20" width="11" height="11" rx="2"/><path d="M20 20h4v4h-4zM28 20h3M20 28h3M27 27h4v4h-4z"/></svg>
+        <h3>هوية رقمية لكل شجرة</h3>
+        <p>تاج بكود QR أو NFC وإحداثيات GPS وسجل صور من يوم الزراعة. أي حد يمسح الكود يشوف تاريخ الشجرة.</p>
+      </article>
+      <article class="tech">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 31V15M12 31h12M18 15a6 6 0 0 1 6-6M18 15a6 6 0 0 0-6-6"/><path d="M7 7a15 15 0 0 1 22 0M11 11a9 9 0 0 1 14 0"/></svg>
+        <h3>حساسات رطوبة التربة</h3>
+        <p>قراءة مستمرة من تحت الشجرة، فمش محتاجين حد يروح يتفقد كل يوم عشان يعرف إذا كانت عطشانة.</p>
+      </article>
+      <article class="tech">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M4 12h20a6 6 0 0 1 6 6v2M4 12v8M12 12v6M20 12v6M12 24c1.500 2 1.500 3.500 0 5.500M20 24c1.500 2 1.500 3.500 0 5.500"/></svg>
+        <h3>ري ذكي بالتنقيط</h3>
+        <p>وحدة تحكم بتفتح الميّة بحسب قراءة الحساس والطقس، ومعاها ري بالتنقيط بيوصّل الميّة للجذور مباشرة.</p>
+        <small>دراسة ميدانية في إسنا (الأقصر) على القصب سجلت توفير مياه بنحو 30% إلى 44% بالتنقيط مقارنة بالغمر. النسبة بتختلف حسب المحصول والتربة. <a href="https://link.springer.com/article/10.1007/s13201-025-02554-7" target="_blank" rel="noopener">المصدر</a></small>
+      </article>
+      <article class="tech">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="9" y="3" width="18" height="30" rx="4"/><path d="M15 7h6M18 28v.5M13 13l3 3 6-6M13 21h10"/></svg>
+        <h3>تطبيق للفريق الميداني</h3>
+        <p>جدول الزيارات، وتسجيل حالة كل شجرة بالصور، وأوامر شغل بتتولد تلقائيًا من التنبيهات.</p>
+      </article>
+      <article class="tech">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="4" y="6" width="28" height="22" rx="3"/><path d="M9 22l5-6 5 4 7-9M12 32h12"/></svg>
+        <h3>لوحة تحكم للشركاء</h3>
+        <p>خريطة بكل أشجارك وحالتها واستهلاك المياه، وتقارير جاهزة للمسؤولية المجتمعية وتقارير الاستدامة.</p>
+      </article>
+      <article class="tech">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="6"/><path d="M18 3v5M18 28v5M3 18h5M28 18h5M7.500 7.500l3.500 3.500M25 25l3.500 3.500M7.500 28.500L11 25M25 11l3.500-3.500"/></svg>
+        <h3>صور الأقمار الصناعية</h3>
+        <p>مؤشر الغطاء النباتي (NDVI) بيساعدنا نتابع الأخضر على مستوى الحي كله ونكتشف المناطق اللي بتتراجع.</p>
+      </article>
+    </div>
+
+    <div class="flow-wrap">
+      <h3>إزاي الإنذار بيوصل من التربة للفريق</h3>
+      <div class="flow">
+        <div class="node"><b>حساس الرطوبة</b><span>بيقرأ التربة تحت الشجرة</span></div>
+        <div class="node"><b>بوابة اتصال</b><span>بتبعت القراءات للإنترنت</span></div>
+        <div class="node"><b>منصة Green Egypt</b><span>بتحلل القراءات وتقارنها بالحد الأدنى</span></div>
+        <div class="node"><b>أمر ري أو تنبيه</b><span>الري بيشتغل تلقائيًا، والمشاكل التانية بتتحول لأمر شغل</span></div>
+        <div class="node"><b>الفريق الميداني</b><span>بيزور ويصلّح ويسجل الحالة بالصور</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKER -->
+<section class="section band" id="tracker">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">لوحة المتابعة · نموذج تجريبي</span>
+      <h2>كل شجرة في الشارع ليها حالة معروفة</h2>
+      <p class="lead">شارع تجريبي فيه 24 شجرة. دوس على أي شجرة تشوف بطاقتها، وعدّي كام يوم وشوف الفرق بين الري الذكي وإنك تقفله. كل الأرقام هنا محاكاة توضيحية.</p>
+    </div>
+
+    <div class="dash" style="color:var(--ink)">
+      <div class="dash-top">
+        <div class="filters" role="group" aria-label="تصفية الأشجار حسب الحالة" id="filters"></div>
+        <div class="sim">
+          <label class="switch"><input type="checkbox" id="smart" checked><span class="tr" aria-hidden="true"></span><span>الري الذكي بالحساسات</span></label>
+          <button class="btn btn-primary btn-sm" id="nextDay" type="button">عدّي يوم</button>
+          <button class="btn btn-ghost btn-sm" id="resetSim" type="button">ابدأ من الأول</button>
+          <span class="day" id="dayLabel">DAY 0</span>
+        </div>
+      </div>
+      <div class="dash-main">
+        <div class="map-col">
+          <div class="street-scroll" tabindex="0" aria-label="خريطة الشارع التجريبي، ممكن تتحرك بالسحب على الموبايل">
+            <div class="street" id="street"></div>
+          </div>
+          <div class="hint">
+            <div class="legend" id="legend"></div>
+            <span class="swipe">اسحب الخريطة يمين وشمال عشان تشوف باقي الشارع.</span>
+          </div>
+        </div>
+        <aside class="side">
+          <div class="passport" id="passport" aria-live="polite"></div>
+        </aside>
+        <div class="feed">
+          <h4>آخر التنبيهات</h4>
+          <ul id="feed" aria-live="polite"></ul>
+        </div>
+      </div>
+      <div class="dash-foot" id="dashFoot"></div>
+    </div>
+    <p class="disclaimer muted">بيانات تجريبية: حد الجفاف 30%، وكل ري بيستهلك 15 لتر في المحاكاة. الأرقام دي افتراضات للعرض مش قياسات حقيقية.</p>
+  </div>
+</section>
+
+<!-- PLACES -->
+<section class="section" id="places">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">الأماكن المستهدفة</span>
+      <h2>خمس أنواع أماكن، وفي كل واحد جهة مسؤولة نتفق معاها الأول</h2>
+      <p class="lead">مفيش زراعة من غير اتفاق مع صاحب المكان. اختار نوع المكان تشوف مين الجهة وإيه اللي هنعمله وإيه التحدي.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="أنواع الأماكن" id="tabs"></div>
+    <dl class="sector" id="sector" role="tabpanel" aria-live="polite"></dl>
+  </div>
+</section>
+
+<!-- REVENUE -->
+<section class="section band" id="revenue">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">الاستدامة المالية</span>
+      <h2>إزاي المشروع بيصرف على نفسه</h2>
+      <p class="lead">الرعاية المستمرة هي اللي بتعيّش الشجر، فلازم يكون ليها دخل ثابت مش تبرع لمرة واحدة. دي مصادر الإيراد المقترحة.</p>
+    </div>
+    <div class="rev-head" aria-hidden="true"><span>مصدر الإيراد</span><span>مين بيدفع</span><span>مقابل إيه</span><span>المرحلة</span></div>
+    <div id="revList"></div>
+
+    <div class="loop">
+      <h3>دورة الاستدامة</h3>
+      <div class="flow">
+        <div class="node"><b>جهات وشركات بتدفع</b><span>عقود رعاية سنوية</span></div>
+        <div class="node"><b>رعاية مستمرة</b><span>ري وفحص واستبدال</span></div>
+        <div class="node"><b>شجر بيعيش</b><span>نسبة نجاة أعلى</span></div>
+        <div class="node"><b>بيانات وتقارير</b><span>أرقام موثقة من الميدان</span></div>
+        <div class="node"><b>شركاء أكتر</b><span>ثقة أكبر وتوسع</span></div>
+      </div>
+    </div>
+    <p class="fine">ده تصور أولي. التسعير والأرقام المالية بتتحدد بعد دراسة الجدوى والتجربة الأولى.</p>
+  </div>
+</section>
+
+<!-- IMPACT CALCULATOR -->
+<section class="section" id="impact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">حاسبة الأثر</span>
+      <h2>احسب الفرق بين شجرة اتزرعت وشجرة اتتابعت</h2>
+      <p class="lead">غيّر عدد الأشجار ونسب النجاة وشوف كام شجرة هتفضل عايشة وكام طن كربون هتمتص على مدى السنين.</p>
+    </div>
+    <div class="calc">
+      <div class="inputs">
+        <div class="field"><label for="inTrees">عدد الأشجار المزروعة <output id="outTrees" for="inTrees"></output></label><input id="inTrees" type="range" min="500" max="100000" step="500" value="10000"></div>
+        <div class="field"><label for="inYears">المدة بالسنين <output id="outYears" for="inYears"></output></label><input id="inYears" type="range" min="1" max="20" step="1" value="10"></div>
+        <div class="field"><label for="inLow">نسبة النجاة من غير متابعة <output id="outLow" for="inLow"></output></label><input id="inLow" type="range" min="20" max="95" step="5" value="50"><small>افتراض للمقارنة. عدّله على حسب خبرتك أو أي دراسة عندك.</small></div>
+        <div class="field"><label for="inHigh">نسبة النجاة مع Green Egypt <output id="outHigh" for="inHigh"></output></label><input id="inHigh" type="range" min="25" max="99" step="1" value="90"><small>ده الهدف اللي بنشتغل عليه، مش رقم اتقاس لسه.</small></div>
+      </div>
+      <div class="results" aria-live="polite">
+        <div class="res"><h3>أشجار لسه عايشة</h3><div id="resTrees"></div></div>
+        <div class="res"><h3>كربون ممتص تراكميًا (طن CO₂)</h3><div id="resCo2"></div></div>
+        <p class="assume">الحساب مبسّط: الشجرة الناضجة بتمتص 22 كجم CO₂ في السنة، وده أقل رقم في نطاق 22 إلى 43 كجم اللي سجلته دراسات هيئة الغابات الأمريكية على أشجار الشوارع، والشجرة بتوصل له تدريجيًا على 10 سنين. نسب النجاة افتراضات تقدر تغيّرها. <a href="https://www.fs.usda.gov/psw/publications/mcpherson/psw_1998_mcpherson003.pdf" target="_blank" rel="noopener">المصدر</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="section" id="plan" style="padding-top:0">
+  <div class="wrap">
+    <div class="plan">
+      <div>
+        <span class="eyebrow">القياس</span>
+        <h3 style="margin-top:12px">بنقيس نفسنا بإيه</h3>
+        <ul class="kpis">
+          <li><b>نسبة نجاة الأشجار بعد 12 شهر</b><span>المؤشر الأهم، ومنه بنثبت إن المتابعة بتفرق.</span></li>
+          <li><b>لتر الميّة لكل شجرة</b><span>بنقارنه بالري التقليدي في نفس الموقع.</span></li>
+          <li><b>زمن الاستجابة للتنبيه</b><span>من لحظة التنبيه لحد ما الفريق يتدخل.</span></li>
+          <li><b>نسبة الأشجار المستبدلة</b><span>بتبيّن اختيار الأنواع والأماكن صح ولا لأ.</span></li>
+          <li><b>رضا الجهة الشريكة وتجديد العقد</b><span>الدليل إن الخدمة نافعة.</span></li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow">خطة البداية</span>
+        <h3 style="margin-top:12px">من تجربة صغيرة لمنصة كاملة</h3>
+        <div class="phases">
+          <div class="phase"><i aria-hidden="true"></i><div><b>المرحلة 1: موقع تجريبي</b><p>مدرسة أو حي صغير بحساسات وري ذكي، عشان نثبت التقنية ونقيس نسبة النجاة.</p></div></div>
+          <div class="phase"><i aria-hidden="true"></i><div><b>المرحلة 2: كذا نوع مكان</b><p>نوسع على شارع وجامعة وشركة، ونجرّب نموذج الرعاية السنوية مع جهات مختلفة.</p></div></div>
+          <div class="phase"><i aria-hidden="true"></i><div><b>المرحلة 3: المنصة للجميع</b><p>نفتح لوحة المتابعة والتطبيق لجهات عندها أشجار، وندرس دخول سوق الكربون.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="section band" id="join">
+  <div class="wrap">
+    <div class="join">
+      <div>
+        <span class="eyebrow">ابدأ معانا</span>
+        <h2 style="margin-top:14px">عايز تكون جزء من الأخضر؟</h2>
+        <p class="lead" style="margin-top:14px">اختار إنت مين، هنقولك إيه اللي محتاجينه منك، وهنجهزلك رسالة جاهزة تبعتها.</p>
+        <div class="who" role="radiogroup" aria-label="أنا" id="who"></div>
+      </div>
+      <div class="join-card" id="joinCard"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect class="l-bg" width="40" height="40" rx="11"/><circle class="l-fg" cx="20" cy="16" r="9"/><rect class="l-fg" x="18.4" y="23" width="3.2" height="10" rx="1.6"/><circle class="l-dot" cx="24.2" cy="13" r="2.4"/></svg>
+        <span class="brand-name">Green Egypt</span>
+      </div>
+      <p>مشروع قيد التأسيس لزيادة المساحات الخضراء في مصر، بزراعة الأشجار ورعايتها ومتابعتها بالتكنولوجيا. لوحة المتابعة والحاسبة هنا أمثلة توضيحية وليست بيانات تشغيل.</p>
+    </div>
+    <div>
+      <h4>المصادر</h4>
+      <ul>
+        <li><a href="https://www.natureasia.com/ar/nmiddleeast/article/10.1038/nmiddleeast.2024.192" target="_blank" rel="noopener">Nature Middle East (2024): المساحات الخضراء وارتفاع الحرارة في مصر</a></li>
+        <li><a href="https://gate.ahram.org.eg/News/3631567.aspx" target="_blank" rel="noopener">بوابة الأهرام: تفاصيل المبادرة الرئاسية للتشجير «زراعة 100 مليون شجرة»</a></li>
+        <li><a href="https://www.fs.usda.gov/psw/publications/mcpherson/psw_1998_mcpherson003.pdf" target="_blank" rel="noopener">USDA Forest Service: امتصاص الكربون في أشجار المدن (McPherson)</a></li>
+        <li><a href="https://link.springer.com/article/10.1007/s13201-025-02554-7" target="_blank" rel="noopener">Applied Water Science (2025): توفير المياه بالري بالتنقيط في مصر</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</div>
+<script>
+(function(){
+  'use strict';
+  try{document.documentElement.setAttribute('dir','rtl');document.documentElement.setAttribute('lang','ar');}catch(e){}
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var fmt=function(n){return Math.round(n).toLocaleString('en-US')};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  /* ---------- mobile menu ---------- */
+  var menuBtn=$('#menuBtn'), nav=$('#nav');
+  menuBtn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    menuBtn.textContent=open?'إغلاق':'القائمة';
+  });
+  $$('a',nav).forEach(function(a){a.addEventListener('click',function(){
+    nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='القائمة';
+  })});
+
+  /* ---------- Arabic helpers ---------- */
+  function plural(n,one,two,few,many){
+    if(n===1) return one;
+    if(n===2) return two;
+    if(n>=3&&n<=10) return n+' '+few;
+    return n+' '+many;
+  }
+  function ago(d){return d===0?'النهارده':'من '+plural(d,'يوم','يومين','أيام','يوم')}
+  function ageText(days){
+    var m=Math.floor(days/30);
+    if(m<1) return 'اتزرعت جديد';
+    return 'عمرها '+plural(m,'شهر','شهرين','شهور','شهر');
+  }
+
+  /* ---------- TRACKER ---------- */
+  var STATUS={
+    ok:{label:'سليمة',filter:'سليمة',glyph:'<path d="M6 18c0-7 4-11 12-12 0 8-4 12-11 12M6 18l7-7"/>'},
+    thirsty:{label:'عطشانة',filter:'عطشانة',glyph:'<path d="M12 4c3 4 5 6.500 5 9a5 5 0 0 1-10 0c0-2.500 2-5 5-9z"/>'},
+    care:{label:'محتاجة رعاية',filter:'محتاجة رعاية',glyph:'<path d="M12 6v7.500M12 17.500v.5"/>'},
+    dead:{label:'لازم تتبدل',filter:'لازم تتبدل',glyph:'<path d="M7 7l10 10M17 7L7 17"/>'}
+  };
+  var ORDER=['ok','thirsty','care','dead'];
+  var SPECIES=['نيم','جاكاراندا','فيكس نيتدا','بونسيانا','زيزفون','جميز'];
+  var CARE_NOTES=['الأوراق عليها علامات جفاف وحرق. الفريق لازم يفحصها.','فيه آفات على الأوراق. محتاجة علاج.','فرع كبير اتكسر. محتاج تقليم وتدعيم.','التاج اتحرك والشجرة مايلة. محتاجة تثبيت.'];
+  var N=24, THRESH=30, SMART_AT=35, LITERS=15;
+  var trees, day, liters, replaced, feed, selected, filter, smart;
+
+  function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+  function status(t){
+    if(t.flag==='dead') return 'dead';
+    if(t.flag==='care') return 'care';
+    if(t.moisture<THRESH) return 'thirsty';
+    return 'ok';
+  }
+  function log(kind,text){
+    feed.unshift({kind:kind,text:text,day:day});
+    if(feed.length>6) feed.length=6;
+  }
+
+  var streetEl=$('#street'), btns=[];
+  function build(){
+    var r=mulberry(11);
+    trees=[];
+    for(var i=0;i<N;i++){
+      trees.push({i:i,id:'GE-'+String(101+i).padStart(4,'0'),side:i<12?'a':'b',pos:(i%12)+1,
+        species:SPECIES[Math.floor(r()*SPECIES.length)],ageDays:90+Math.floor(r()*650),
+        moisture:46+Math.floor(r()*32),sinceWater:Math.floor(r()*4),thirstyDays:0,flag:null,note:'',replaced:false});
+    }
+    [[3,22],[14,26],[19,24]].forEach(function(p){var t=trees[p[0]];t.moisture=p[1];t.thirstyDays=1;t.sinceWater=6});
+    trees[7].flag='care';trees[7].note=CARE_NOTES[0];
+    trees[21].flag='care';trees[21].note=CARE_NOTES[1];
+    trees[10].flag='dead';trees[10].moisture=6;trees[10].sinceWater=14;
+    day=0;liters=0;replaced=0;feed=[];selected=3;filter='all';smart=$('#smart').checked;
+    log('dead',trees[10].id+' مش بتستجيب. محتاجة استبدال.');
+    log('care',trees[21].id+' فيها آفات على الأوراق.');
+    log('care',trees[7].id+' عليها علامات جفاف وحرق.');
+    [19,14,3].forEach(function(i){log('thirsty',trees[i].id+' رطوبة التربة '+trees[i].moisture+'%. أقل من الحد الأدنى.')});
+    // street DOM
+    var h='<div class="drip a"></div><div class="drip b"></div><div class="road"><span>شارع تجريبي</span></div>';
+    trees.forEach(function(t){
+      h+='<button type="button" class="tree '+t.side+'" data-i="'+t.i+'" style="--c:'+t.pos+'"><span class="c"><svg viewBox="0 0 24 24" aria-hidden="true"></svg></span><span class="tid">'+t.id.slice(-3)+'</span></button>';
+    });
+    streetEl.innerHTML=h;
+    btns=$$('.tree',streetEl);
+  }
+
+  function counts(){
+    var c={ok:0,thirsty:0,care:0,dead:0};
+    trees.forEach(function(t){c[status(t)]++});
+    return c;
+  }
+
+  function renderFilters(c){
+    var h='<button type="button" class="fchip" data-f="all" aria-pressed="'+(filter==='all')+'"><span>الكل</span><b>'+N+'</b></button>';
+    ORDER.forEach(function(s){
+      h+='<button type="button" class="fchip s-'+s+'" data-f="'+s+'" aria-pressed="'+(filter===s)+'"><i class="sw"></i><span>'+STATUS[s].filter+'</span><b>'+c[s]+'</b></button>';
+    });
+    $('#filters').innerHTML=h;
+    $('#legend').innerHTML=ORDER.map(function(s){return '<span class="s-'+s+'" style="--sc:var(--'+(s==='ok'?'ok':s==='thirsty'?'water':s==='care'?'care':'dead')+')"><i></i>'+STATUS[s].label+'</span>'}).join('');
+  }
+
+  function renderTrees(){
+    btns.forEach(function(b,i){
+      var t=trees[i], s=status(t);
+      b.className='tree '+t.side+' s-'+s+(selected===i?' sel':'')+(filter!=='all'&&filter!==s?' dim':'');
+      $('svg',b).innerHTML=STATUS[s].glyph;
+      b.setAttribute('aria-label','شجرة '+t.id+'، '+STATUS[s].label+(selected===i?'، محددة':''));
+      b.setAttribute('aria-pressed',selected===i?'true':'false');
+    });
+  }
+
+  function qrSvg(id){
+    var seed=0;for(var i=0;i<id.length;i++) seed=(seed*31+id.charCodeAt(i))|0;
+    var r=mulberry(seed), n=9, cells='';
+    function finder(x,y){return '<rect x="'+x+'" y="'+y+'" width="3" height="3"/><rect x="'+(x+1)+'" y="'+(y+1)+'" width="1" height="1" style="fill:var(--bg)"/>'}
+    for(var y=0;y<n;y++)for(var x=0;x<n;x++){
+      var inF=(x<3&&y<3)||(x>5&&y<3)||(x<3&&y>5);
+      if(!inF&&r()>.52) cells+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>';
+    }
+    return '<svg class="qr" viewBox="0 0 9 9" role="img" aria-label="كود QR للشجرة">'+cells+finder(0,0)+finder(6,0)+finder(0,6)+'</svg>';
+  }
+
+  function renderPassport(){
+    var el=$('#passport');
+    if(selected===null){el.innerHTML='<span class="hole"></span><p class="muted">اختار شجرة من الخريطة تشوف بطاقتها.</p>';return}
+    var t=trees[selected], s=status(t);
+    var next={ok:'مفيش إجراء مطلوب دلوقتي. الفحص الميداني الجاي مجدول.',
+      thirsty:'الحساس سجّل إن التربة أقل من الحد الأدنى. المفروض يتبعت أمر ري.',
+      care:t.note||'الفريق الميداني لازم يفحصها.',
+      dead:'الشجرة ماتت. الاستبدال جزء من الضمان.'}[s];
+    var act={thirsty:['ابعت أمر ري','water'],care:['سجّل إنها اتعالجت','heal'],dead:['ازرع شجرة بدلها','replace']}[s];
+    el.innerHTML='<span class="hole" aria-hidden="true"></span>'+
+      '<div class="tag-top"><span class="mono tag-id">'+t.id+'</span><span class="pill '+s+'"><i class="dot"></i>'+STATUS[s].label+'</span></div>'+
+      '<h3>'+esc(t.species)+(t.replaced?'<small>بديلة</small>':'')+'</h3>'+
+      '<p class="meta">'+ageText(t.ageDays)+' · '+(t.side==='a'?'الجانب الشرقي':'الجانب الغربي')+' · موقع '+t.pos+'</p>'+
+      '<div class="meter-row"><span>رطوبة التربة</span><b class="mono">'+t.moisture+'%</b></div>'+
+      '<div class="meter" aria-hidden="true"><span style="--v:'+t.moisture+'%"></span><i style="--t:'+THRESH+'%"></i></div>'+
+      '<p class="p-meter-hint">الخط الرأسي هو الحد الأدنى ('+THRESH+'%)</p>'+
+      '<div class="p-row"><span>آخر ري</span><b>'+(s==='dead'?'—':ago(t.sinceWater))+'</b></div>'+
+      '<div class="next '+s+'">'+esc(next)+'</div>'+
+      '<div class="p-act">'+(act?'<button type="button" class="btn btn-primary btn-sm" data-act="'+act[1]+'">'+act[0]+'</button>':'<span class="muted" style="font-size:.9rem">مفيش إجراء</span>')+qrSvg(t.id)+'</div>';
+  }
+
+  function renderFeed(){
+    $('#feed').innerHTML=feed.map(function(e){
+      return '<li class="s-'+e.kind+'"><i></i><div>'+esc(e.text)+'<time>DAY '+e.day+'</time></div></li>';
+    }).join('')||'<li class="muted">مفيش تنبيهات.</li>';
+  }
+
+  function renderFoot(c){
+    var alive=N-c.dead;
+    $('#dashFoot').innerHTML='<span>أشجار حية: <b>'+alive+' من '+N+'</b></span><span>ميّة اتصرفت في الري: <b>'+liters+' لتر</b></span><span>أشجار اتبدلت: <b>'+replaced+'</b></span>';
+    $('#dayLabel').textContent='DAY '+day;
+  }
+
+  function render(){
+    var c=counts();
+    renderFilters(c);renderTrees();renderPassport();renderFeed();renderFoot(c);
+  }
+
+  function tick(){
+    day++;
+    var watered=0, newThirsty=[], died=[], hurt=[];
+    trees.forEach(function(t){
+      if(t.flag==='dead') return;
+      t.ageDays++;
+      var before=t.moisture;
+      t.moisture=Math.max(0,t.moisture-(3+Math.floor(Math.random()*6)));
+      t.sinceWater++;
+      if(smart&&t.moisture<SMART_AT){t.moisture=70;t.sinceWater=0;t.thirstyDays=0;watered++;liters+=LITERS}
+      if(t.moisture<THRESH){
+        if(before>=THRESH) newThirsty.push(t);
+        t.thirstyDays++;
+      } else t.thirstyDays=0;
+      if(t.thirstyDays>=5&&Math.random()<.25){t.flag='dead';died.push(t)}
+      else if(!t.flag&&t.thirstyDays>=2&&Math.random()<.35){t.flag='care';t.note=CARE_NOTES[0];hurt.push(t)}
+      else if(!t.flag&&Math.random()<.012){t.flag='care';t.note=CARE_NOTES[1+Math.floor(Math.random()*3)];hurt.push(t)}
+    });
+    if(watered) log('ok','الري الذكي سقى '+plural(watered,'شجرة','شجرتين','شجرات','شجرة')+' ('+(watered*LITERS)+' لتر).');
+    newThirsty.slice(0,2).forEach(function(t){log('thirsty',t.id+' رطوبة التربة '+t.moisture+'%. أقل من الحد الأدنى.')});
+    if(newThirsty.length>2) log('thirsty','و '+(newThirsty.length-2)+' أشجار تانية بقت عطشانة.');
+    hurt.forEach(function(t){log('care',t.id+' محتاجة رعاية. اتفتح أمر شغل.')});
+    died.forEach(function(t){log('dead',t.id+' ماتت من الجفاف. محتاجة استبدال.')});
+    if(!smart&&!watered&&!newThirsty.length&&!died.length&&!hurt.length) log('ok','يوم عدّى. التربة بتنشف والري الذكي مقفول.');
+    render();
+  }
+
+  // events
+  $('#street').addEventListener('click',function(e){
+    var b=e.target.closest('.tree');if(!b) return;
+    selected=+b.getAttribute('data-i');renderTrees();renderPassport();
+  });
+  $('#filters').addEventListener('click',function(e){
+    var b=e.target.closest('.fchip');if(!b) return;
+    var f=b.getAttribute('data-f');filter=(filter===f&&f!=='all')?'all':f;
+    renderFilters(counts());renderTrees();
+  });
+  $('#passport').addEventListener('click',function(e){
+    var b=e.target.closest('[data-act]');if(!b) return;
+    var t=trees[selected], a=b.getAttribute('data-act');
+    if(a==='water'){t.moisture=70;t.sinceWater=0;t.thirstyDays=0;liters+=LITERS;log('ok',t.id+' اتروّت. الرطوبة رجعت 70%.')}
+    if(a==='heal'){t.flag=null;t.note='';log('ok',t.id+' اتعالجت وبقت سليمة.')}
+    if(a==='replace'){t.flag=null;t.note='';t.ageDays=0;t.moisture=70;t.sinceWater=0;t.thirstyDays=0;t.replaced=true;replaced++;t.species=SPECIES[Math.floor(Math.random()*SPECIES.length)];log('ok',t.id+' اتزرعت بدلها شجرة جديدة ('+t.species+').')}
+    render();
+  });
+  $('#nextDay').addEventListener('click',tick);
+  $('#smart').addEventListener('change',function(e){smart=e.target.checked;log(smart?'ok':'care',smart?'الري الذكي اتفتح.':'الري الذكي اتقفل. الشجر هيعتمد على الري اليدوي.');renderFeed()});
+  $('#resetSim').addEventListener('click',function(){$('#smart').checked=true;build();render()});
+  build();render();
+
+  /* ---------- SECTORS ---------- */
+  var SECTORS=[
+    {t:'الشوارع',who:'الحي أو المحافظة (إدارة الحدائق والتنمية المحلية)، وأحيانًا جهة الطرق.',doo:'تشجير الجزر الوسطى والأرصفة بأنواع بتتحمل الحرارة والعادم، مع شبكة ري بالتنقيط ومصدر مياه متفق عليه من الأول.',get:'ظل وتبريد للمشاة، وشارع أحسن شكلًا، وتقرير دوري بعدد الأشجار الحية وحالتها.',risk:'مصدر المياه، وأعمال الحفر وتوسعة الطرق اللي ممكن تلغي مسار الزراعة. بنتفق على الخريطة مع الجهة قبل أول شتلة.'},
+    {t:'المدارس',who:'إدارة المدرسة والإدارة التعليمية التابعة لها.',doo:'أشجار في الفناء والسور، وحصة «شجرتي» بيتابع فيها الطلاب شجرة بالكود ويقروا بياناتها.',get:'بيئة مدرسية أهدى، ومحتوى عملي عن البيئة والتكنولوجيا للطلاب.',risk:'الإجازة الصيفية. الري الذكي بيغطي الفترة دي من غير ما حد يحتاج يكون في المدرسة.'},
+    {t:'الجامعات',who:'إدارة الجامعة أو الإدارة المسؤولة عن الحرم والبيئة.',doo:'ممرات ظل وحدائق في الحرم، وفتح بيانات المنصة لمشاريع التخرج في كليات الزراعة والهندسة والحاسبات.',get:'حرم أخضر، وبيانات حقيقية للأبحاث، وفرص تدريب للطلاب.',risk:'المساحات كبيرة. بنبدأ بمنطقة تجريبية ونوسع بعد ما نقيس النجاة.'},
+    {t:'المناطق السكنية',who:'جهاز المدينة أو اتحاد الشاغلين أو المطوّر العقاري.',doo:'تشجير الشوارع الداخلية والحدائق المشتركة، مع باقة رعاية سنوية وإمكانية إن السكان يتبنّوا أشجار.',get:'منطقة أجمل وأبرد، وشفافية كاملة في الصيانة: السكان بيشوفوا حالة الشجر بنفسهم.',risk:'اتفاق السكان على تكلفة الصيانة. بنقدم باقات واضحة وتبنّي شجرة كطريقة مشاركة سهلة.'},
+    {t:'الشركات',who:'إدارة الشركة وقسم الاستدامة والمسؤولية المجتمعية.',doo:'تشجير مقر الشركة، أو رعاية شوارع ومدارس باسمها، ولوحة متابعة خاصة بأشجارها.',get:'تقارير أثر بيئي بأرقام من الميدان تنفع تقارير الاستدامة، وحضور مسؤول مجتمعيًا.',risk:'إن المشروع يتحول لحملة تصوير وبس. عشان كده الدفع مربوط بعقد رعاية سنوي مش بيوم الزراعة.'}
+  ];
+  var tabs=$('#tabs'), sector=$('#sector'), tabIdx=0;
+  function renderTabs(){
+    tabs.innerHTML=SECTORS.map(function(s,i){return '<button type="button" role="tab" class="tab" id="tab'+i+'" aria-selected="'+(i===tabIdx)+'" tabindex="'+(i===tabIdx?0:-1)+'" data-i="'+i+'">'+s.t+'</button>'}).join('');
+    var s=SECTORS[tabIdx];
+    sector.setAttribute('aria-labelledby','tab'+tabIdx);
+    sector.innerHTML='<div><dt>مين الجهة المسؤولة؟</dt><dd>'+s.who+'</dd></div>'+
+      '<div><dt>هنعمل إيه؟</dt><dd>'+s.doo+'</dd></div>'+
+      '<div><dt>الشريك بياخد إيه؟</dt><dd>'+s.get+'</dd></div>'+
+      '<div class="risk"><dt>التحدي اللي حاسبين حسابه</dt><dd>'+s.risk+'</dd></div>';
+  }
+  tabs.addEventListener('click',function(e){var b=e.target.closest('.tab');if(!b) return;tabIdx=+b.getAttribute('data-i');renderTabs()});
+  tabs.addEventListener('keydown',function(e){
+    var d=e.key==='ArrowLeft'?1:e.key==='ArrowRight'?-1:0;if(!d) return;
+    tabIdx=(tabIdx+d+SECTORS.length)%SECTORS.length;renderTabs();$('#tab'+tabIdx).focus();e.preventDefault();
+  });
+  renderTabs();
+
+  /* ---------- REVENUE ---------- */
+  var REV=[
+    {t:'عقود زراعة وصيانة سنوية',who:'محافظات وأحياء ومدارس وجامعات ومطوّرين',what:'زراعة، ورعاية، وري، واستبدال، وتقرير دوري. العقد السنوي هو اللي بيموّل الرعاية.',st:['now','من البداية']},
+    {t:'رعاية الشركات',who:'شركات عندها برامج مسؤولية مجتمعية أو استدامة',what:'رعاية أشجار أو شارع أو مدرسة باسم الشركة، مع لوحة متابعة وتقرير أثر.',st:['now','من البداية']},
+    {t:'تبنّي شجرة',who:'أفراد وعائلات',what:'شجرة بكود ممكن يتابعوا حالتها، ومنها الشجرة اللي تتسمّى باسم حد بيحبوه.',st:['next','بعد التجربة الأولى']},
+    {t:'اشتراك لوحة المتابعة',who:'جهات عندها أشجار فعلًا ومحتاجة تتابعها',what:'نتابعلها شجرها بالحساسات والتطبيق واللوحة، حتى لو إحنا مش اللي زرعناه.',st:['scale','مرحلة التوسع']},
+    {t:'مشتل وتوريد',who:'مشاريع تشجير تانية',what:'شتلات ومعدات ري ذكي بنستخدمها إحنا وبنوفرها لغيرنا.',st:['scale','مرحلة التوسع']},
+    {t:'أرصدة الكربون',who:'مشترين في سوق الكربون الطوعي',what:'ممكن بعد سنين من البيانات الموثقة وبعد اعتماد من جهة معايير. مش مضمون، فمش بنبني عليه الخطة.',st:['future','مستقبلًا']}
+  ];
+  $('#revList').innerHTML=REV.map(function(r){
+    return '<div class="rev-row"><div class="t">'+r.t+'</div><div class="cell" data-l="مين بيدفع">'+r.who+'</div><div class="cell" data-l="مقابل إيه">'+r.what+'</div><span class="stage '+r.st[0]+'">'+r.st[1]+'</span></div>';
+  }).join('');
+
+  /* ---------- CALCULATOR ---------- */
+  var inT=$('#inTrees'), inY=$('#inYears'), inL=$('#inLow'), inH=$('#inHigh');
+  function co2Tonnes(n,s,T){var sum=0;for(var t=1;t<=T;t++) sum+=22*Math.min(t,10)/10;return n*s*sum/1000}
+  function bars(a,b,unit,fmtFn){
+    var mx=Math.max(a,b,1);
+    function row(cls,label,v){return '<div class="bar-row '+cls+'"><div class="lbl"><span>'+label+'</span><b>'+fmtFn(v)+' '+unit+'</b></div><div class="bar-track"><div class="bar-fill" style="--w:'+(v/mx*100).toFixed(1)+'%"></div></div></div>'}
+    return '<div class="bars">'+row('with','مع Green Egypt',b)+row('without','من غير متابعة',a)+'</div><p class="delta">الفرق: '+fmtFn(b-a)+' '+unit+'</p>';
+  }
+  function calc(){
+    var n=+inT.value, T=+inY.value, lo=+inL.value, hi=+inH.value;
+    if(hi<lo){hi=lo;inH.value=hi}
+    $('#outTrees').textContent=fmt(n);
+    $('#outYears').textContent=T+(T===1?' سنة':T===2?' سنتين':T<=10?' سنين':' سنة');
+    $('#outLow').textContent=lo+'%';$('#outHigh').textContent=hi+'%';
+    $('#resTrees').innerHTML=bars(n*lo/100,n*hi/100,'شجرة',fmt);
+    $('#resCo2').innerHTML=bars(co2Tonnes(n,lo/100,T),co2Tonnes(n,hi/100,T),'طن',fmt);
+  }
+  [inT,inY,inL,inH].forEach(function(el){el.addEventListener('input',calc)});
+  calc();
+
+  /* ---------- JOIN ---------- */
+  var CONTACT={email:'',whatsapp:''}; // ضيف بيانات التواصل الرسمية هنا
+  var JOIN=[
+    {k:'school',l:'مدرسة',need:['موافقة إدارة المدرسة أو الإدارة التعليمية','صور للمساحات المتاحة للزراعة وتقدير مساحتها','مصدر مياه قريب من أماكن الزراعة','شخص مسؤول عن التنسيق، مثلًا مشرف نشاط'],
+      msg:'السلام عليكم،\nأنا [الاسم] من [اسم المدرسة] في [المحافظة].\nحابين نعرف تفاصيل مشاركة مدرستنا في مشروع Green Egypt.\nالمساحة المتاحة للزراعة: [__] م²، ومصدر المياه: [__]، وعدد الطلاب: [__].\nممكن نحدد ميعاد نتكلم فيه؟'},
+    {k:'university',l:'جامعة',need:['موافقة الجهة المسؤولة عن الحرم الجامعي','خريطة مبدئية بالمناطق المقترحة للتشجير','مصدر مياه ونظام ري حالي إن وجد','مسؤول من الجامعة، وكلية أو قسم مهتم بالبيانات'],
+      msg:'السلام عليكم،\nأنا [الاسم] من [اسم الجامعة / الكلية].\nمهتمين بتجربة Green Egypt في الحرم الجامعي، وبالاستفادة من بيانات المنصة في مشاريع الطلاب.\nالمنطقة المقترحة: [__]، وتقريبًا [__] م².\nنقدر نعمل مقابلة قريبة؟'},
+    {k:'company',l:'شركة',need:['اسم الشركة وقسم الاستدامة أو المسؤولية المجتمعية','هل المطلوب تشجير مقر الشركة، ولا رعاية مكان عام باسمها','حجم البرنامج المتوقع وعدد الأشجار المستهدف','احتياجات التقارير، مثل تقارير الاستدامة'],
+      msg:'السلام عليكم،\nأنا [الاسم] من شركة [اسم الشركة]، [المسمى الوظيفي].\nبندرس رعاية مشروع تشجير ومتابعة مع Green Egypt في إطار برنامج [الاستدامة / المسؤولية المجتمعية].\nالمطلوب: [تشجير مقر الشركة / رعاية مكان عام]، وعدد الأشجار التقريبي: [__].\nممكن عرض تفصيلي؟'},
+    {k:'gov',l:'حي أو محافظة',need:['الجهة المسؤولة عن المكان وجهة التنسيق','شارع أو منطقة مرشحة للتجربة','موافقات الزراعة وتصاريح الحفر لو لزم','مصدر مياه الري المتاح'],
+      msg:'السلام عليكم،\nأنا [الاسم] من [الحي / المحافظة].\nعندنا منطقة مرشحة لتجربة مشروع Green Egypt: [اسم الشارع أو المنطقة].\nالمساحة التقريبية: [__]، ومصدر المياه: [__].\nنحب نعرف الخطوات والمستندات المطلوبة.'},
+    {k:'residential',l:'منطقة سكنية',need:['جهة الإدارة: جهاز المدينة أو اتحاد الشاغلين أو المطوّر','المساحات المشتركة المقترحة للتشجير','رأي السكان في المساهمة في تكلفة الصيانة','مصدر مياه الري الحالي'],
+      msg:'السلام عليكم،\nأنا [الاسم] من [اسم المنطقة / الكمبوند].\nعايزين نعرف باقات التشجير والرعاية السنوية من Green Egypt للمناطق السكنية.\nعدد الوحدات: [__]، والمساحات المشتركة المتاحة: [__].\nممكن نتواصل؟'},
+    {k:'person',l:'فرد',need:['تحب تتبنّى شجرة ولا تشارك كمتطوع','المنطقة اللي ممكن تزور فيها شجرتك','طريقة التواصل المناسبة ليك'],
+      msg:'السلام عليكم،\nأنا [الاسم] وحابب أتبنّى شجرة أو أشارك كمتطوع في Green Egypt.\nأنا في [المدينة]، ومهتم بـ [تبنّي شجرة / التطوع / الاتنين].\nأقدر أعمل إيه من هنا؟'},
+    {k:'investor',l:'داعم أو مستثمر',need:['نوع الدعم: تمويل أو خبرة أو شراكة تشغيلية','الاهتمام بمرحلة معينة: التجربة أو التوسع','أي معلومات عن الجهة أو الصندوق'],
+      msg:'السلام عليكم،\nأنا [الاسم] من [الجهة].\nمهتم بدعم Green Egypt في مرحلة [التجربة الأولى / التوسع] عن طريق [تمويل / خبرة / شراكة تشغيلية].\nممكن نحدد اجتماع نتعرف فيه على الخطة؟'}
+  ];
+  var who=$('#who'), card=$('#joinCard'), cur='school';
+  who.innerHTML=JOIN.map(function(j){return '<input type="radio" name="who" id="who-'+j.k+'" value="'+j.k+'"'+(j.k===cur?' checked':'')+'><label for="who-'+j.k+'">'+j.l+'</label>'}).join('');
+  function contactHtml(){
+    var parts=[];
+    if(CONTACT.email) parts.push('الإيميل: <span class="mono">'+esc(CONTACT.email)+'</span>');
+    if(CONTACT.whatsapp) parts.push('واتساب: <span class="mono">'+esc(CONTACT.whatsapp)+'</span>');
+    return parts.length?parts.join(' · '):'قنوات التواصل الرسمية هتتعلن قبل الإطلاق. جهّز رسالتك من دلوقتي وابعتها أول ما تتحدد.';
+  }
+  function renderJoin(){
+    var j=JOIN.filter(function(x){return x.k===cur})[0];
+    card.innerHTML='<h3>اللي هنحتاجه منك ('+j.l+')</h3>'+
+      '<ul class="need">'+j.need.map(function(n){return '<li>'+n+'</li>'}).join('')+'</ul>'+
+      '<label class="tl" for="joinMsg">رسالتك الجاهزة (عدّل الأجزاء اللي بين الأقواس)</label>'+
+      '<textarea id="joinMsg" rows="7"></textarea>'+
+      '<div class="copy-row"><button type="button" class="btn btn-primary btn-sm" id="copyMsg">انسخ الرسالة</button><span class="copy-status" id="copyStatus" role="status"></span></div>'+
+      '<p class="contact">'+contactHtml()+'</p>';
+    $('#joinMsg').value=j.msg;
+    $('#copyMsg').addEventListener('click',function(){
+      var ta=$('#joinMsg'), st=$('#copyStatus');
+      function fallback(){ta.focus();ta.select();st.textContent='اتحدد النص. انسخه من عندك.'}
+      try{
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(function(){st.textContent='اتنسخت الرسالة.'},fallback)}
+        else fallback();
+      }catch(e){fallback()}
+    });
+  }
+  who.addEventListener('change',function(e){if(e.target&&e.target.name==='who'){cur=e.target.value;renderJoin()}});
+  renderJoin();
+})();
+</script>
+
+</body></html>
